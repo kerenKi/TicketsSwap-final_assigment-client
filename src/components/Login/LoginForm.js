@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 function LoginForm(props) {
     
@@ -15,6 +16,8 @@ function LoginForm(props) {
           
           <input type="submit" value="Log in" />
         </form>
+        <p> <Link className="signupLink" to='/signup'> New here? Sign up!</Link></p>
+        <p> <Link className="eventsLink" to='/events'> Look at events without login</Link></p>
         </div>)
     }
     
