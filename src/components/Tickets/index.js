@@ -17,7 +17,12 @@ class TicketsListContainer extends Component {
     render() {
         return (
             <div>
-                <TicketsList tickets={this.props.tickets} event={this.currentEvent}/>
+                <TicketsList 
+                  tickets={this.props.tickets} 
+                  event={this.currentEvent} 
+                  user={this.props.user} 
+                  eventId={this.eventId}
+                />
             </div>
         );
     }
@@ -26,7 +31,8 @@ class TicketsListContainer extends Component {
 const mapStateToProps = state => {
     return {  
       tickets: state.tickets,
-      events: state.events
+      events: state.events,
+      user: state.userLogedIn
     }
   }
 
