@@ -7,7 +7,7 @@ const eventsFetched = events => ({
   events
 })
 
-export const loadEvents = () => (dispatch,getState) => {
+export const loadEvents = () => dispatch => {
   request
     .get('http://localhost:4000/events')
     .then(res => {
@@ -15,16 +15,3 @@ export const loadEvents = () => (dispatch,getState) => {
     })
     .catch(console.error)
 }
-
-
-
-// if (getState().events) return
-//     const jwt = getState().currentUser
-//       // GET /events request
-//       request(`${baseUrl}/events`)
-//       .set('Authorization', `Bearer ${jwt}`)
-//       .then(response => {
-//           // dispatch an EVENTS_FETCHED action that contains the events
-//           dispatch(eventsFetched(response.body))
-//       })
-//       .catch(console.error)
