@@ -23,7 +23,6 @@ class CommentFormContainer extends Component {
     if (this.state.text === ''){
       alert('You are trying to post an empty comment')
     } else {
-      console.log(this.state)
       this.props.addComment(this.state)
       this.setState({
         userToken:this.props.user,

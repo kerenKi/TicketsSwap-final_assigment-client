@@ -8,7 +8,7 @@ import TicketsList from './TicketsList'
 class TicketsListContainer extends Component {
   eventId = this.props.match.params.id;
   currentEvent = this.props.events[0] && this.props.events.find(
-    event => event.id == this.eventId)
+    event => event.id === Number(this.eventId))
 
   componentDidMount() {
     this.props.loadTickets(this.eventId)
