@@ -15,7 +15,11 @@ class CommentsContainer extends Component {
     render() {
         return (
             <div>
-                <Comments comments={this.props.comments} user={this.props.user} ticketId={this.ticketId} />
+                <Comments 
+                  comments={this.props.comments} 
+                  user={this.props.user} 
+                  ticketId={this.ticketId} 
+                />
             </div>
         );
     }

@@ -7,7 +7,7 @@ const commentAdded = (comments) => ({
     comments
 })
 
-export const addComment = (comment) => (dispatch,getState) => {
+export const addComment = (comment) => (dispatch) => {
  const { userToken, text, ticket_id } = comment
  return request
   .post('http://localhost:4000/add-comment')
