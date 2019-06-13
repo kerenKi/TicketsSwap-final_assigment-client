@@ -16,6 +16,7 @@ class TicketDetailsContainer extends Component {
         return (
             <div>
                 <TicketDetails ticket={this.props.currentTicket} />
+                
             </div>
         );
     }
