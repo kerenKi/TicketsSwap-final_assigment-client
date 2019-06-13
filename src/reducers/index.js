@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import userLogedIn from './login'
-// import event from './singleEvent'
-// import currentUser from './currentUser'
+import events from './events'
+import tickets from './tickets'
 
 export default combineReducers ({
-    userLogedIn
-    // event,
-    // currentUser
+    userLogedIn,
+    events,
+    tickets
 })

@@ -5,6 +5,9 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import LoginContainer from './components/Login'
 import SignupContainer from './components/Signup'
+import EventsListContainer from './components/Events'
+import TicketsListContainer from './components/Tickets'
+
 
 class App extends React.Component {
   render() {
@@ -24,6 +27,10 @@ class App extends React.Component {
             this.props.userLogedIn.jwt ? <Redirect to="/events" /> : <SignupContainer />
           }
         />
+
+        <Route exact path="/events" component={EventsListContainer}/>
+        <Route exact path="/events/:id" component={TicketsListContainer} />
+
       
       </div>
     );

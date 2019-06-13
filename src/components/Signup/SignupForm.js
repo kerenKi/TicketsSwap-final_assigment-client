@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 function SignupForm(props) {
     
@@ -16,6 +17,8 @@ function SignupForm(props) {
 
           
           <input type="submit" value="Sign me up" />
+
+          <p> <Link className="loginFromSignupLink" to='/'> Already a member? Log in</Link></p>
         </form>
         </div>)
     }
