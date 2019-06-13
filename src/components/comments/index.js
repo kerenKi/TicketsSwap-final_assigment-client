@@ -15,7 +15,7 @@ class CommentsContainer extends Component {
     render() {
         return (
             <div>
-                <Comments comments={this.props.comments} />
+                <Comments comments={this.props.comments} user={this.props.user} ticketId={this.ticketId} />
             </div>
         );
     }
@@ -24,6 +24,7 @@ class CommentsContainer extends Component {
 const mapStateToProps = state => {
     return {  
       comments: state.comments,
+      user: state.userLogedIn
     }
   }
 
