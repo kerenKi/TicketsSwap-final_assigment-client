@@ -7,7 +7,7 @@ const ticketsFetched = tickets => ({
   tickets
 })
 
-export const loadTickets = (id) => (dispatch,getState) => {
+export const loadTickets = (id) => dispatch => {
   request
     .post('http://localhost:4000/tickets')
     .send({ event_id: id })

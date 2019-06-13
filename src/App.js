@@ -7,6 +7,8 @@ import LoginContainer from './components/Login'
 import SignupContainer from './components/Signup'
 import EventsListContainer from './components/Events'
 import TicketsListContainer from './components/Tickets'
+import TicketDetailsContainer from './components/TicketDetails'
+
 
 
 class App extends React.Component {
@@ -30,6 +32,8 @@ class App extends React.Component {
 
         <Route exact path="/events" component={EventsListContainer}/>
         <Route exact path="/events/:id" component={TicketsListContainer} />
+        <Route exact path="/tickets/:id" component={TicketDetailsContainer} />
+
 
       
       </div>
