@@ -1,6 +1,5 @@
 import request from 'superagent'
 
-
 export const COMMENT_ADDED = 'COMMENT_ADDED';
 
 const commentAdded = (comment) => ({
