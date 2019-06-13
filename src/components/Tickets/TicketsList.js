@@ -18,11 +18,16 @@ function TicketsList(props) {
     
     return (<div>
         {!event && 'Loading...'}
-        {event && <h1>Available tickets for {event.name} : </h1>}
-        {!tickets[0] && 'There are no tickets for sale at the moment'}
-        <ul>
-        {ticketItems}
-        </ul>
+        {event && <div>
+          <h2>{event.name}</h2>
+          <p>{event.start_time} - {event.end_time}</p>
+          <p>{event.description}</p>
+          <h1>Available tickets for {event.name} : </h1>
+          {!tickets[0] && 'There are no tickets for sale at the moment'}
+          <ul>
+          {ticketItems}
+          </ul>
+          </div>}
         </div>)
     }
     
