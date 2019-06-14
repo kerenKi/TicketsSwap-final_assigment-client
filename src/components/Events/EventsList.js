@@ -5,7 +5,7 @@ import EventFormContainer from '../newEventForm'
 
 function EventsList(props) {
     const { events, user } = props
-    const eventItems = events && events.map(event => {
+    const eventItems = events.events && events.events.map(event => {
         return <li key={event.id}>
             <Link to={`/events/${event.id}`} >
                 <div>

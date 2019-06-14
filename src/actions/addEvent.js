@@ -4,7 +4,10 @@ export const EVENT_ADDED = 'EVENT_ADDED';
 
 const eventAdded = (events) => ({
     type: EVENT_ADDED,
-    events
+    payload: {
+      events: events.events,
+      total: events.total,
+    }  
 })
 
 export const addEvent = (event) => (dispatch) => {
@@ -15,7 +18,7 @@ export const addEvent = (event) => (dispatch) => {
   .send({name, picture, description, start_time, end_time})
   .set('Authorization', `Bearer ${userToken}`)
   .then(res => {
-    dispatch(eventAdded(res.body.events))
+    dispatch(eventAdded(res.body))
   })
   .catch(console.error)
 }
