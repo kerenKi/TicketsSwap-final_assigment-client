@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import EventFormContainer from '../newEventForm'
+
 
 function EventsList(props) {
-    const { events } = props
+    const { events, user } = props
     const eventItems = events && events.map(event => {
         return <li key={event.id}>
             <Link to={`/events/${event.id}`} >
@@ -21,6 +23,11 @@ function EventsList(props) {
         <ul>
         {eventItems}
         </ul>
+        {!user.jwt && <h3>Want to promote an event? <br/> 
+          Only our members can post events <br/>
+          <Link to='/signup'> SIGN UP </Link> or  
+          <Link to='/'> LOG IN </Link></h3>}
+          {user.jwt && <EventFormContainer/>}
         </div>)
     }
     
