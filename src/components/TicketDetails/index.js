@@ -16,7 +16,8 @@ class TicketDetailsContainer extends Component {
         return (
             <div>
               <TicketDetails ticket={this.props.currentTicket} />
-              <h3>Risk: {this.props.risk}% </h3>
+              <h3>Risk:</h3>
+              <p>This ticket has a {this.props.risk}% chance of being a fraud </p>
             </div>
         );
     }
