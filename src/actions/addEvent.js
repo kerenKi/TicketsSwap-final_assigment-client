@@ -11,7 +11,6 @@ const eventAdded = (events) => ({
 })
 
 export const addEvent = (event) => (dispatch) => {
-  console.log('addEvent')
  const { userToken, name, picture, description, start_time, end_time } = event
  return request
   .post('http://localhost:4000/add-event')
