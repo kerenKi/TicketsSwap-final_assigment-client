@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom'
 
 function TicketDetails(props) {
     const { ticket } = props
@@ -12,7 +11,7 @@ function TicketDetails(props) {
           <p>For: {event_name}</p>
           <p>Description: {description}</p>
           {picture && <img src={picture} alt='The ticket'/>}
-          <p>Price: {price}</p>
+          <p>Price: {price} Euro</p>
           </div>}
         </div>)
     }
