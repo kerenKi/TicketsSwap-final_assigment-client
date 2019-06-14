@@ -11,7 +11,6 @@ function TicketsList(props) {
                 <p>Title: {ticket.title}</p>
                 <p>Seller: {ticket.user.user_name}</p>
                 <p>Price: {ticket.price}</p>
-                <p>Description: {ticket.description}</p>
                 </div>
             </Link>
         </li>
