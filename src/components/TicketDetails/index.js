@@ -15,8 +15,8 @@ class TicketDetailsContainer extends Component {
     render() {
         return (
             <div>
-                <TicketDetails ticket={this.props.currentTicket} />
-                
+              <TicketDetails ticket={this.props.currentTicket} />
+              <h3>Risk: {this.props.risk}% </h3>
             </div>
         );
     }
@@ -25,6 +25,7 @@ class TicketDetailsContainer extends Component {
 const mapStateToProps = state => {
     return {  
       currentTicket: state.currentTicket,
+      risk: state.risk
     }
   }
 
