@@ -18,12 +18,16 @@ function TicketsList(props) {
             </Link>
         </li>
     })  
+    const startTime = new Date(event.start_time)
+    const endTime = new Date(event.end_time)
+    const options = { weekday: 'short', year: '2-digit', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'};
+
     
     return (<div>
         {!event && 'Loading...'}
         {event && <div>
           <h1>{event.name}</h1>
-          <p>{event.start_time} - {event.end_time}</p>
+          <p>{startTime.toLocaleDateString('default', options)} - {endTime.toLocaleDateString('default', options)}</p>
           <p>{event.description}</p>
           <h2>Available tickets for {event.name} : </h2>
           {tickets.length ?
