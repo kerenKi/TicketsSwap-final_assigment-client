@@ -1,4 +1,7 @@
 import React from 'react';
+import DatePicker from "react-datepicker";
+ 
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function EventForm (props) {
   return (
@@ -19,14 +22,31 @@ export default function EventForm (props) {
       </label>
 
       <label>Date/Time
+        <br />
         <label>
           Starts at:
-          <input type="text" name="start_time" value={props.values.start_time} onChange={props.onChange}/>
+          <DatePicker
+            selected={props.startSelected}
+            onChange={props.handleStartChange}
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={60}
+            dateFormat="MMMM d, yyyy h:mm aa"
+            timeCaption="time"
+          />
         </label>
 
         <label>
           End Time:
-          <input type="text" name="end_time" value={props.values.end_time} onChange={props.onChange}/>
+          <DatePicker
+            selected={props.endSelected}
+            onChange={props.handleEndChange}
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={60}
+            dateFormat="MMMM d, yyyy h:mm aa"
+            timeCaption="time"
+          />
         </label>
       </label>
     <input type="submit" value="Post your event" />

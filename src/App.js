@@ -17,29 +17,33 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Route
-          exact
-          path="/"
-          render={() =>
-            this.props.userLogedIn.jwt ? <Redirect to="/events" /> : <LoginContainer />
-          }
-        />
-        <Route 
-          exact 
-          path="/signup" 
-          render={() =>
-            this.props.userLogedIn.jwt ? <Redirect to="/events" /> : <SignupContainer />
-          }
-        />
+        <header>
+          <p>Nav Bar will be here later</p>
+        </header>
+        <main>
+          <Route
+            exact
+            path="/"
+            render={() =>
+              this.props.userLogedIn.jwt ? <Redirect to="/events" /> : <LoginContainer />
+            }
+          />
+          <Route 
+            exact 
+            path="/signup" 
+            render={() =>
+              this.props.userLogedIn.jwt ? <Redirect to="/events" /> : <SignupContainer />
+            }
+          />
 
-        <Route exact path="/events" component={EventsListContainer}/>
-        <Route exact path="/events/:id" component={TicketsListContainer} />
-        <Route exact path="/tickets/:id" component={TicketDetailsContainer} />
-        <Route exact path="/tickets/:id" component={CommentsContainer} />
-
-
-
-      
+          <Route exact path="/events" component={EventsListContainer}/>
+          <Route exact path="/events/:id" component={TicketsListContainer} />
+          <Route exact path="/tickets/:id" component={TicketDetailsContainer} />
+          <Route exact path="/tickets/:id" component={CommentsContainer} />
+        </main>
+        <footer>
+          <p>Created by Keren ;)</p>
+        </footer>
       </div>
     );
   }

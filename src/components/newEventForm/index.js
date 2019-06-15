@@ -10,8 +10,22 @@ class EventFormContainer extends Component {
     name: '',
     picture:'',
     description:'',
-    start_time:'',
-    end_time:''
+    start_time: '',
+    end_time: ''
+  }
+
+  handleStartChange = (date) => {
+    this.setState({
+      ...this.state,
+      start_time: date
+    })
+  }
+
+  handleEndChange = (date) => {
+    this.setState({
+      ...this.state,
+      end_time: date
+    })
   }
 
   onChange = (event) => {
@@ -35,15 +49,25 @@ class EventFormContainer extends Component {
         name: '',
         picture:'',
         description:'',
-        start_time:'',
-        end_time:''
+        start_time: '',
+        end_time: ''
       })
     }
   }
 
   render() {
+    console.log('state:', this.state)
     return (
-      <EventForm onChange={this.onChange} values={this.state} onSubmit={this.onSubmit}/>)
+      <EventForm 
+        onChange={this.onChange} 
+        values={this.state} 
+        onSubmit={this.onSubmit}
+        handleStartChange={this.handleStartChange}
+        handleEndChange={this.handleEndChange}
+        startSelected={this.state.start_time}
+        endSelected={this.state.end_time}
+        />
+      )
   }
 }
 
