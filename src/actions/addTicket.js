@@ -2,9 +2,12 @@ import request from 'superagent'
 
 export const TICKET_ADDED = 'TICKET_ADDED';
 
-const ticketAdded = (tickets) => ({
+const ticketAdded = (tickets, risks) => ({
     type: TICKET_ADDED,
-    tickets
+    payload:{
+      tickets,
+      risks
+    } 
 })
 
 export const addTicket = (ticket) => (dispatch) => {
@@ -14,7 +17,7 @@ export const addTicket = (ticket) => (dispatch) => {
   .send({event_id, title, picture, description, price})
   .set('Authorization', `Bearer ${userToken}`)
   .then(res => {
-    dispatch(ticketAdded(res.body.tickets))
+    dispatch(ticketAdded(res.body.tickets,res.body.risks))
   })
   .catch(console.error)
 }

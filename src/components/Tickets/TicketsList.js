@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom'
 import TicketFormContainer from '../newTicketForm'
 
 function TicketsList(props) {
-    const { tickets, event, user, eventId } = props
-    const ticketItems = tickets && tickets.map(ticket => {
+    const { tickets, event, user, eventId, risks } = props
+
+    const ticketItems = tickets && tickets.map((ticket,index) => {
         return <li key={ticket.id}>
             <Link to={`/tickets/${ticket.id}`} >
-                <div>
+                <div style={{backgroundColor:riskColor(risks[index])}}>
                 <p>Title: {ticket.title}</p>
                 <p>Seller: {ticket.user.user_name}</p>
                 <p>Price: {ticket.price}</p>
+                <p>Risk: {risks[index]}</p>
+               
                 </div>
             </Link>
         </li>
@@ -23,10 +26,10 @@ function TicketsList(props) {
           <p>{event.start_time} - {event.end_time}</p>
           <p>{event.description}</p>
           <h2>Available tickets for {event.name} : </h2>
-          {!tickets[0] && 'There are no tickets for sale at the moment'}
-          <ul>
-          {ticketItems}
-          </ul>
+          {tickets.length ?
+             <ul>{ticketItems}</ul>
+            :
+            'There are no tickets for sale at the moment'}
           {!user.jwt && <h3>Want to sell a ticket? <br/> 
           Only our members can post tickets for sale <br/>
           <Link to='/signup'> SIGN UP </Link> or  
@@ -37,5 +40,16 @@ function TicketsList(props) {
         </div>)
     }
     
-    
+function riskColor(risk)  {
+    const green = '#42d171';
+    const red = '#e6483d';
+    const yellow = '#f3de22';
+    if (risk <= 30){
+        return green
+    } else if (risk >= 60){
+        return red
+    } else {
+        return yellow
+    }
+}    
     export default TicketsList;

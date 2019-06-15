@@ -2,9 +2,12 @@ import request from 'superagent'
 
 export const TICKETS_FETCHED = 'TICKETS_FETCHED'
 
-const ticketsFetched = tickets => ({
+const ticketsFetched = (tickets, risks) => ({
   type: TICKETS_FETCHED,
-  tickets
+  payload:{
+    tickets,
+    risks
+  } 
 })
 
 export const loadTickets = (id) => dispatch => {
@@ -12,7 +15,7 @@ export const loadTickets = (id) => dispatch => {
     .post('http://localhost:4000/tickets')
     .send({ event_id: id })
     .then(res => {
-      dispatch(ticketsFetched(res.body.tickets))
+      dispatch(ticketsFetched(res.body.tickets,res.body.risks))
     })
     .catch(console.error)
 }

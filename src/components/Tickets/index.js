@@ -14,7 +14,9 @@ class TicketsListContainer extends Component {
     this.props.loadTickets(this.eventId)
    }
    
+
     render() {
+      
         return (
             <div>
                 <TicketsList 
@@ -22,6 +24,8 @@ class TicketsListContainer extends Component {
                   event={this.currentEvent} 
                   user={this.props.user} 
                   eventId={this.eventId}
+                  risks={this.props.risks}
+                  
                 />
             </div>
         );
@@ -30,8 +34,9 @@ class TicketsListContainer extends Component {
 
 const mapStateToProps = state => {
     return {  
-      tickets: state.tickets,
-      events: state.events,
+      tickets: state.tickets.tickets,
+      risks: state.tickets.risks,
+      events: state.events.events,
       user: state.userLogedIn
     }
   }
