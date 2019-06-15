@@ -14,6 +14,7 @@ class TicketsListContainer extends Component {
     this.props.loadTickets(this.eventId)
    }
    
+
     render() {
       
         return (
@@ -24,6 +25,7 @@ class TicketsListContainer extends Component {
                   user={this.props.user} 
                   eventId={this.eventId}
                   risks={this.props.risks}
+                  
                 />
             </div>
         );

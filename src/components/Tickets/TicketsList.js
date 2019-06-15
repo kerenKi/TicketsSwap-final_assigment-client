@@ -8,7 +8,7 @@ function TicketsList(props) {
     const ticketItems = tickets && tickets.map((ticket,index) => {
         return <li key={ticket.id}>
             <Link to={`/tickets/${ticket.id}`} >
-                <div>
+                <div style={{backgroundColor:riskColor(risks[index])}}>
                 <p>Title: {ticket.title}</p>
                 <p>Seller: {ticket.user.user_name}</p>
                 <p>Price: {ticket.price}</p>
@@ -40,5 +40,16 @@ function TicketsList(props) {
         </div>)
     }
     
-    
+function riskColor(risk)  {
+    const green = '#42d171';
+    const red = '#e6483d';
+    const yellow = '#f3de22';
+    if (risk <= 30){
+        return green
+    } else if (risk >= 60){
+        return red
+    } else {
+        return yellow
+    }
+}    
     export default TicketsList;
