@@ -6,12 +6,16 @@ import EventFormContainer from '../newEventForm'
 function EventsList(props) {
     const { events, limit, offset, total, user, onNext, onPrevious } = props
     const eventItems = events && events.map(event => {
+        let startTime = new Date(event.start_time)
+        const options = { weekday: 'short', year: '2-digit', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'};
+        let endTime = new Date(event.end_time)
+
         return <li key={event.id}>
             <Link to={`/events/${event.id}`} >
                 <div>
                 <img src={event.picture} alt={event.name}/>
                 <p>{event.name}</p>
-                <p>{event.start_time} - {event.end_time} </p>
+                <p>{startTime.toLocaleDateString('default', options)} - {endTime.toLocaleDateString('default', options)} </p>
                 </div>
             </Link>
         </li>

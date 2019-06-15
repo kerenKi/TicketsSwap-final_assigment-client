@@ -9,7 +9,10 @@ li {
 img {
   width: 200px;
 }
-
+footer {
+  height: 50px;
+  background-color: rgb(130, 204, 214);
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
