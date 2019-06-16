@@ -17,10 +17,16 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <Link to={'/events'}> Upcoming events</Link>
-          <Link to={'/past-events'}> Past events</Link>
-          <Link to={'/'}> LOG IN</Link>
-          <Link to={'/signup'}> SIGN UP</Link>
+          <ul className="navBar">
+            <div className="leftSideNavBar">
+              <li className="navBarEvents"><Link to={'/events'}> Upcoming events</Link></li>
+              <li className="navBarEvents"><Link to={'/past-events'}> Past events</Link></li>
+            </div>
+            <div className="rightSideNavBar">
+            <li className="navBarlogin"><Link to={'/'}> LOG IN</Link></li>
+            <li className="navBarlogin"><Link to={'/signup'}> SIGN UP</Link></li>
+            </div>
+          </ul>
         </header>
         <main>
           <Route
