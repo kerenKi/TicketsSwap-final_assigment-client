@@ -24,7 +24,7 @@ export default function TicketForm (props) {
 
       <li>
         <label> Price: </label>
-        <input type="text" name="price" value={props.values.price} onChange={props.onChange}/>
+        <input type="number" name="price" value={props.values.price} onChange={props.onChange}/>
         <span>State your price in Euros</span>            
       </li>
 
