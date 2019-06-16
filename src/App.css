@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css?family=Averia+Libre|Fjalla+One|Raleway|Rubik&display=swap');
+
 .App {
   text-align: center;
 }
@@ -9,19 +12,434 @@ li {
 img {
   width: 200px;
 }
+
+h1 {
+  font-family: 'Rubik', sans-serif;
+  text-shadow: 2px 3px 3px rgba(0,0,0,0.2);
+
+}
+
+a {
+  font-family: 'Averia Libre', cursive;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
 footer {
   height: 50px;
-  background-color: rgb(130, 204, 214);
-}
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: linear-gradient(#32A4A7, #008693);
+  justify-content: center;
+  align-items: center;
   display: flex;
-  flex-direction: column;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+}
+header {
+  background: linear-gradient(#32A4A7, #008693);
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
+body {
+  background-image: linear-gradient(#3bbeca, #27AEBB);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.navBar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 50px;
+  
+}
+.navBar li{
+  display: inline-flex;
+  height: 50px;
+  border-right: 1px solid #730017;
+}
+
+.navBarEvents {
+  display: flex;
+  float: left;
+}
+
+.navBarlogin {
+  display: flex;
+  float: right;
+}
+
+.navBar a {
+  display: block;
+  color: #730017;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background: linear-gradient(#32A4A7, #008693);
+  font-family: 'Fjalla One', sans-serif;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+}
+
+.navBar a:hover {
+  color: white;
+  background-color: #008693;
+}
+
+.loginForm {
+  max-width: 500px;
+	padding: 10px 20px;
+  background: rgb(235, 104, 124);
+  opacity: 0.9;
+	margin: 10px auto;
+	border-radius: 8px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  box-shadow: 5px 5px 10px rgb(87, 86, 86);
+}
+
+.loginForm input[type="email"],
+.loginForm input[type="text"],
+.loginForm input[type="password"] {
+  font-family: 'Raleway', sans-serif;
+	background: rgba(255, 255, 255, 0.425);
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+  margin: 12px auto;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	background-color: #f7f7f7;
+	color:#505558;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	margin-bottom: 30px;
+}
+
+.loginForm input[type="email"]:focus,
+.loginForm input[type="text"]:focus,
+.loginForm input[type="password"]:focus {
+  background: rgb(223, 174, 181);
+}
+
+.loginForm label {
+  font-family: 'Raleway', sans-serif;
+}
+
+.loginForm input[type="submit"] {
+  position: relative;
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	margin: 0 auto;
+	background: #32A4A7;
+	font-size: 18px;
+	text-align: center;
+  font-style: normal;
+  font-weight: 500;
+	width: 100%;
+	border: 1px solid rgb(39, 129, 133);
+	border-width: 1px 1px 3px;
+	margin-bottom: 10px;
+}
+
+.loginForm input[type="submit"]:hover {
+	border: 1px solid rgb(25, 80, 83);
+	background: rgb(37, 124, 128);
+}
+
+.LoginLinks a {
+  box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.2);
+}
+ 
+.LoginLinks a:hover {
+  color: #730017;
+}
+
+.eventsList {
+  display: inline-flex;
+  border: 1px solid rgb(125, 207, 214);
+  border-radius: 9px;
+  background-color: #45D1DE;
+  box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  padding: 15px;
+}
+
+.eventsList:hover {
+  background-color: #4fe4f1;
+
+}
+
+.eventsList img {
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.eventsListButtons {
+  position: relative;
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	margin: 0 auto;
+	background: #32A4A7;
+	font-size: 18px;
+	text-align: center;
+  font-style: normal;
+  font-weight: 500;
+	width: 20%;
+  border: 1px solid rgb(39, 129, 133);
+  border-radius: 8px;
+	border-width: 1px 1px 3px;
+  margin-bottom: 10px;
+  box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.2);  
+}
+.eventsListButtons:hover {
+  border: 1px solid rgb(25, 80, 83);
+	border-width: 1px 1px 3px;
+  background: rgb(37, 124, 128);
+	margin-bottom: 10px;
+}
+
+.eventsListNotAMember {
+  width: 100%;
+  height: 200px;
+}
+
+.eventsListNotAMember a {
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+  margin: auto;
+}
+
+.addEventForm {
+  max-width:800px;
+	margin:50px auto;
+  background:#eb687c;
+  opacity: 0.9;  
+	border-radius:2px;
+	padding:20px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.addEventForm ul {
+  list-style:none;
+	padding:0;
+	margin:0;
+}
+
+.addEventForm li {
+  display: block;
+	padding: 9px;
+	border:1px solid #730017;
+	margin-bottom: 30px;
+	border-radius: 3px;
+}
+
+.addEventForm li:last-child{
+	border:none;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+.addEventForm li > label{
+	display: block;
+	float: left;
+	margin-top: -19px;
+	background: #eb687c;
+	height: 24px;
+	padding: 2px 5px 2px 5px;
+  color: #730017;
+	font-size: 14px;
+  overflow: hidden;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.addEventForm input[type="text"],
+.addEventForm textarea[type="text"] {
+  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.addEventForm li > span{
+	background: #962239d5;
+	display: block;
+	padding: 3px;
+	margin: 0 -9px -9px -9px;
+	text-align: center;
+	color: #C0C0C0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.addEventForm textarea{
+	resize:none;
+}
+
+.addEventForm input[type="submit"] {
+	background: #962239d5;
+	border: none;
+  padding: 20px 40px 20px 40px;
+	border-bottom: 3px solid #751b2dd5;
+  border-radius: 3px;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+	color: #ffc1cdd5;
+}
+
+.addEventForm input[type="submit"]:hover {
+  color: white;
+  
+}
+
+.eventDescription {
+  width: 50%;
+  border: 1px solid rgb(125, 207, 214);
+  border-radius: 2px;
+  background-color: #45D1DE;
+  margin: 10px auto;
+  padding: 15px;
+}
+
+.tickets {
+  display: inline-flex;
+  border: 1px solid rgb(125, 207, 214);
+  border-radius: 5px;
+  box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.2);
+  margin: 10px ;
+  padding: 15px;
+}
+
+.tickets a {
+  font-weight: 500;
+  color: #3b3c3d;
+}
+
+.tickets a:hover {
+  font-weight: 700;
+  color: #962239d5;
+}
+
+.linkToOtherEvents a {
+  position: relative;
+  top:10px;
+  color: #3b3c3d;
+  box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.2);
+  margin: 30px;
+  padding: 5px;
+}
+
+.linkToOtherEvents a:hover {
+  background-color: #3b3c3d;
+  color: white;
+}
+
+h2 {
+  margin: 40px;
+}
+
+.risk {
+  width: 30%;
+  margin: auto;
+}
+
+.comments {
+  /* margin: auto; */
+  width: 50%;
+  /* width: 90%; */
+  margin: 0 auto 1em auto;
+  position: relative;
+}
+.comments li {
+  width: 50%;
+  margin: auto;
+  font-size: 1em;
+  border-radius: 0.75em;
+  background-color: #b3b0b0;
+  line-height: 1.4em;
+  font-family: Helvetica;
+}
+.comments span {
+  width: 100%;
+  background-color: #b3b0b0;
+}
+.comments p {
+  width: 80%;
+  margin: 0 auto 1em auto;
+  background-color: #ccc;
+  border-radius: 0.75em;
+  padding: 20px 30px;
+}
+
+.newCommentForm {
+  max-width: 450px;
+  height: 200px;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  border-radius: 0.75em;
+  background-color: #b3b0b0;
+  line-height: 1.4em;
+  font-family: 'Rubik', sans-serif;
+}
+
+.newCommentForm label {
+  display:block;
+	margin-bottom: 10px;
+}
+
+.newCommentForm textarea {
+  width: 80%;
+  margin: 0 auto 1em auto;
+  background-color: #ccc;
+  border-radius: 0.75em;
+  padding: 20px 30px;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+.newCommentForm input[type="submit"] {
+  background: #5b5c5e;
+  border: none;
+  position: relative;
+  bottom: 10px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+	color: #ebebebd5;
+}
+
+.newCommentForm input[type="submit"]:hover { 
+  background-color: #3b3c3d;
+  color: white;
+}
+
 
 

@@ -56,7 +56,6 @@ class EventFormContainer extends Component {
   }
 
   render() {
-    console.log('state:', this.state)
     return (
       <EventForm 
         onChange={this.onChange} 

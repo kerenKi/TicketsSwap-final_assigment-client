@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { loadTicket } from '../../actions/loadTicket';
 import { connect } from "react-redux";
 import TicketDetails from './TicketDetails'
+import { riskColor } from '../Tickets/TicketsList'
 
 
 
@@ -14,10 +15,10 @@ class TicketDetailsContainer extends Component {
    
     render() {
         return (
-            <div>
+            <div className="risk">
               <TicketDetails ticket={this.props.currentTicket} />
               <h3>Risk:</h3>
-              <p>This ticket has a {this.props.risk}% chance of being a fraud </p>
+              <p style={{backgroundColor:riskColor(this.props.risk)}}>This ticket has a <b>{this.props.risk}%</b> chance of being a fraud </p>
             </div>
         );
     }

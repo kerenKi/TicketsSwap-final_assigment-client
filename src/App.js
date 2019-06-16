@@ -9,8 +9,8 @@ import EventsListContainer from './components/Events'
 import TicketsListContainer from './components/Tickets'
 import TicketDetailsContainer from './components/TicketDetails'
 import CommentsContainer from './components/comments'
-
-
+import PastEventsContainer from './components/PastEvents'
+import { Link } from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -18,7 +18,18 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <p>Nav Bar will be here later</p>
+          <ul className="navBar">
+            <div className="leftSideNavBar">
+              <li className="navBarEvents"><Link to={'/events'}> Upcoming events</Link></li>
+              <li className="navBarEvents"><Link to={'/past-events'}> Past events</Link></li>
+            </div>
+            {!this.props.userLogedIn.jwt &&
+            <div className="rightSideNavBar">
+            <li className="navBarlogin"><Link to={'/'}> LOG IN</Link></li>
+            <li className="navBarlogin"><Link to={'/signup'}> SIGN UP</Link></li>
+            </div>
+            }
+          </ul>
         </header>
         <main>
           <Route
@@ -37,12 +48,13 @@ class App extends React.Component {
           />
 
           <Route exact path="/events" component={EventsListContainer}/>
+          <Route exact path="/past-events" component={PastEventsContainer}/>
           <Route exact path="/events/:id" component={TicketsListContainer} />
           <Route exact path="/tickets/:id" component={TicketDetailsContainer} />
           <Route exact path="/tickets/:id" component={CommentsContainer} />
         </main>
         <footer>
-          <p>Created by Keren ;)</p>
+          <p> &copy; Created by Keren  <span>&#128519; &#127891;</span></p>
         </footer>
       </div>
     );
