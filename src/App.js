@@ -12,6 +12,7 @@ import CommentsContainer from './components/comments'
 import PastEventsContainer from './components/PastEvents'
 import { Link } from 'react-router-dom'
 
+
 class App extends React.Component {
   render() {
     return (
@@ -22,10 +23,12 @@ class App extends React.Component {
               <li className="navBarEvents"><Link to={'/events'}> Upcoming events</Link></li>
               <li className="navBarEvents"><Link to={'/past-events'}> Past events</Link></li>
             </div>
+            {!this.props.userLogedIn.jwt &&
             <div className="rightSideNavBar">
             <li className="navBarlogin"><Link to={'/'}> LOG IN</Link></li>
             <li className="navBarlogin"><Link to={'/signup'}> SIGN UP</Link></li>
             </div>
+            }
           </ul>
         </header>
         <main>

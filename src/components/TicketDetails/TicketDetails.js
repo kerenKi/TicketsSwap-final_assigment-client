@@ -8,10 +8,10 @@ function TicketDetails(props) {
         {!ticket && 'Loading...'}
         {ticket && <div>
           <h1>{user_name}'s ticket:</h1>
-          <p>For: {event_name}</p>
-          <p>Description: {description}</p>
+          <p><b>For :</b> {event_name}</p>
+          <p><b>Description :</b> {description}</p>
           {picture && <img src={picture} alt='The ticket'/>}
-          <p>Price: {price} Euro</p>
+          <p><b>Price :</b> {price} Euro</p>
           </div>}
         </div>)
     }

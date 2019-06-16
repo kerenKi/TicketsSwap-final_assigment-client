@@ -33,12 +33,16 @@ function EventsList(props) {
         {(offset + limit) < total && 
             <button className="eventsListButtons" onClick={onNext}>next events</button>}
 
-        {!user.jwt && <div className="eventsListNotAMember"><h3>Want to promote an event? <br/> 
+        {!user.jwt && <div className="eventsListNotAMember">
+            <h3>Want to promote an event? <br/> 
           Only our members can post events <br/>
           <Link to='/signup'> SIGN UP </Link>  or   
           <Link to='/'> LOG IN </Link></h3>
           </div>}
-          {user.jwt && <EventFormContainer/>}
+          {user.jwt && <div className="addEventForm">
+              <h1>Want to publish an event?</h1>
+              <EventFormContainer/>
+              </div>}
         </div>)
     }
     

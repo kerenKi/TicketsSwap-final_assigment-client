@@ -2,28 +2,36 @@ import React from 'react';
 
 export default function TicketForm (props) {
   return (
-    <form onSubmit={props.onSubmit}>
-      <label>
-        Title:
-        <input type="text" name="title" value={props.values.title} onChange={props.onChange}/>
-      </label>
+    <form className="addEventForm" onSubmit={props.onSubmit}>
+      <ul>
+        <li>
+          <label> Title: </label>
+          <input type="text" name="title" value={props.values.title} onChange={props.onChange}/>
+          <span>Give your ticket a title</span>
+        </li>
 
-      <label>
-        Picture (optional):
-        <input type="text" name="picture" value={props.values.picture} onChange={props.onChange} />
-      </label>
+        <li>
+          <label> Picture (optional): </label>
+          <input type="text" name="picture" value={props.values.picture} onChange={props.onChange} />
+          <span>If you have a piture of the ticket, paste the image address here</span>
+        </li>
 
-      <label>
-        Description:
+      <li>
+        <label> Description: </label>
         <textarea type="text" name="description" value={props.values.description} onChange={props.onChange}/>
-      </label>
+        <span>Say something about your ticket</span>      
+      </li>
 
-      <label>
-        Price:
+      <li>
+        <label> Price: </label>
         <input type="text" name="price" value={props.values.price} onChange={props.onChange}/>
-      </label>
+        <span>State your price in Euros</span>            
+      </li>
 
-    <input type="submit" value="Post ticket for sale" />
+      <li>
+        <input type="submit" value="Post ticket for sale" />
+      </li>
+    </ul>
     </form>  
     )
   }

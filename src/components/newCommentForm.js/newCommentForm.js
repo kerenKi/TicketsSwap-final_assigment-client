@@ -2,15 +2,17 @@ import React from 'react';
 
 export default function CommentForm (props) {
   return (
-    <form onSubmit={props.onSubmit}>
+    <div className="newCommentForm">
+      <form onSubmit={props.onSubmit}>
 
-      <label>
-        Your comment:
-        <textarea type="text" name="text" value={props.value.text} onChange={props.onChange}/>
-      </label>
+        <label>
+         Add comment:
+          <textarea type="text" name="text" value={props.value.text} onChange={props.onChange}/>
+        </label>
 
-    <input type="submit" value="Post comment" />
-    </form>  
+        <input type="submit" value="Post comment" />
+      </form>  
+    </div>
     )
   }
   

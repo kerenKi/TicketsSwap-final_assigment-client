@@ -5,51 +5,59 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function EventForm (props) {
   return (
-    <form onSubmit={props.onSubmit}>
-      <label>
-        Event Name:
-        <input type="text" name="name" value={props.values.name} onChange={props.onChange}/>
-      </label>
+    <form className="addEventForm" onSubmit={props.onSubmit}>
+      <ul>
+        <li>
+          <label> Event Name: </label>
+          <input type="text" name="name" value={props.values.name} onChange={props.onChange}/>
+          <span>Enter your event name here</span>
+        </li>
 
-      <label>
-       Event Photo or logo:
-        <input type="text" name="picture" placeholder="paste image address here" value={props.values.picture} onChange={props.onChange} />
-      </label>
+        <li>
+          <label> Event Photo or logo:  </label>
+          <input type="text" name="picture" value={props.values.picture} onChange={props.onChange} />
+          <span>Paste image address here</span>
+       
+        </li>
 
-      <label>
-        Description:
-        <textarea type="text" name="description" value={props.values.description} onChange={props.onChange}/>
-      </label>
+        <li>
+          <label> Description: </label>
+          <textarea type="text" name="description" value={props.values.description} onChange={props.onChange}/>
+          <span>Tell us what the event is gonne be like</span>
+        </li>
 
-      <label>Date/Time
-        <br />
-        <label>
-          Starts at:
-          <DatePicker
-            selected={props.startSelected}
-            onChange={props.handleStartChange}
-            showTimeSelect
-            timeFormat="HH:mm"
-            timeIntervals={60}
-            dateFormat="MMMM d, yyyy h:mm aa"
-            timeCaption="time"
-          />
-        </label>
+        <li>
+          <label> Starts at:
+            <DatePicker
+              selected={props.startSelected}
+              onChange={props.handleStartChange}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={60}
+              dateFormat="MMMM d, yyyy h:mm aa"
+              timeCaption="time"
+            />
+          </label>
 
-        <label>
-          End Time:
-          <DatePicker
-            selected={props.endSelected}
-            onChange={props.handleEndChange}
-            showTimeSelect
-            timeFormat="HH:mm"
-            timeIntervals={60}
-            dateFormat="MMMM d, yyyy h:mm aa"
-            timeCaption="time"
-          />
-        </label>
-      </label>
-    <input type="submit" value="Post your event" />
+          <label> End Time:
+            <DatePicker
+              selected={props.endSelected}
+              onChange={props.handleEndChange}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={60}
+              dateFormat="MMMM d, yyyy h:mm aa"
+              timeCaption="time"
+            />
+            </label>
+        <span>Pick the event Date/Time</span>
+
+        </li>
+      
+        <li>
+          <input type="submit" value="Post your event" />
+        </li>
+      </ul>
     </form>  
     )
   }
