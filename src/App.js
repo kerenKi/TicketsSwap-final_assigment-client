@@ -9,16 +9,18 @@ import EventsListContainer from './components/Events'
 import TicketsListContainer from './components/Tickets'
 import TicketDetailsContainer from './components/TicketDetails'
 import CommentsContainer from './components/comments'
-
-
-
+import PastEventsContainer from './components/PastEvents'
+import { Link } from 'react-router-dom'
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <header>
-          <p>Nav Bar will be here later</p>
+          <Link to={'/events'}> Upcoming events</Link>
+          <Link to={'/past-events'}> Past events</Link>
+          <Link to={'/'}> LOG IN</Link>
+          <Link to={'/signup'}> SIGN UP</Link>
         </header>
         <main>
           <Route
@@ -37,12 +39,13 @@ class App extends React.Component {
           />
 
           <Route exact path="/events" component={EventsListContainer}/>
+          <Route exact path="/past-events" component={PastEventsContainer}/>
           <Route exact path="/events/:id" component={TicketsListContainer} />
           <Route exact path="/tickets/:id" component={TicketDetailsContainer} />
           <Route exact path="/tickets/:id" component={CommentsContainer} />
         </main>
         <footer>
-          <p>Created by Keren ;)</p>
+          <p> &copy; Created by Keren  <span>&#128519; &#127891;</span></p>
         </footer>
       </div>
     );

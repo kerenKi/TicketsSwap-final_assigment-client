@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function SignupForm(props) {
     
     return (<div>
-      <h1>SIGN IN</h1>
+      <h1>SIGN UP</h1>
         <form onSubmit={props.onSubmit}>
         <label>User name: </label>
           <input type="text" name="user_name" required value={props.values.user_name} onChange={props.onChange}></input>
