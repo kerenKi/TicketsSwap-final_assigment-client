@@ -7,7 +7,7 @@ function PastEvents(props) {
         const options = { weekday: 'short', year: '2-digit', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'};
         let endTime = new Date(event.end_time)
 
-        return <li key={event.id}>
+        return <li key={event.id} className="eventsList">
                 <div>
                 <img src={event.picture} alt={event.name}/>
                 <p>{event.name}</p>
@@ -19,15 +19,14 @@ function PastEvents(props) {
     return (<div>
         {!events && 'Loading...'}
         <h1>Events that are over</h1>
-        <p>Try again next year</p>
         <ul>
         {eventItems}
         </ul>
-        <p>Showing {limit} events out of {total}</p>
+        <p>Showing {(total - offset) > limit ? limit : (total - offset)} events out of {total}</p>
         {offset > 0 && 
-            <button onClick={onPrevious}>Back to previous events</button>}
+            <button className="eventsListButtons" onClick={onPrevious}>Back to previous events</button>}
         {(offset + limit) < total && 
-            <button onClick={onNext}>next events</button>}
+            <button className="eventsListButtons" onClick={onNext}>next events</button>}
 
         </div>)
     }

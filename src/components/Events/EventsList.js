@@ -10,7 +10,7 @@ function EventsList(props) {
         const options = { weekday: 'short', year: '2-digit', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'};
         let endTime = new Date(event.end_time)
 
-        return <li key={event.id}>
+        return <li key={event.id} className="eventsList">
             <Link to={`/events/${event.id}`} >
                 <div>
                 <img src={event.picture} alt={event.name}/>
@@ -27,16 +27,17 @@ function EventsList(props) {
         <ul>
         {eventItems}
         </ul>
-        <p>Showing {limit} events out of {total}</p>
+        <p>Showing {(total - offset) > limit ? limit : (total - offset)} events out of {total}</p>
         {offset > 0 && 
-            <button onClick={onPrevious}>Back to previous events</button>}
+            <button className="eventsListButtons" onClick={onPrevious}>Back to previous events</button>}
         {(offset + limit) < total && 
-            <button onClick={onNext}>next events</button>}
+            <button className="eventsListButtons" onClick={onNext}>next events</button>}
 
-        {!user.jwt && <h3>Want to promote an event? <br/> 
+        {!user.jwt && <div className="eventsListNotAMember"><h3>Want to promote an event? <br/> 
           Only our members can post events <br/>
-          <Link to='/signup'> SIGN UP </Link> or  
-          <Link to='/'> LOG IN </Link></h3>}
+          <Link to='/signup'> SIGN UP </Link>  or   
+          <Link to='/'> LOG IN </Link></h3>
+          </div>}
           {user.jwt && <EventFormContainer/>}
         </div>)
     }
