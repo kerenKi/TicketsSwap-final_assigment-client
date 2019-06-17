@@ -17,6 +17,15 @@ export const loginUser = (user) => dispatch => {
   .then(response => {
     dispatch(userToken(response.body))
   })
-  .catch(console.error)
+  .catch(error => {
+    console.log(error)
+    if (error.status === 500) {
+      return alert('There seems to be a problem with the server')
+    }
+    if (error.status === 400) {
+      return alert("There is something wrong with your log in. maybe you've entered the wrong password?")
+    }
+    return alert('Something went wrong, please try again')
+  })
 }
 
