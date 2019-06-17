@@ -19,14 +19,19 @@ class App extends React.Component {
       <div className="App">
         <header>
           <ul className="navBar">
-            <div className="leftSideNavBar">
+            <div>
               <li className="navBarEvents"><Link to={'/events'}> Upcoming events</Link></li>
               <li className="navBarEvents"><Link to={'/past-events'}> Past events</Link></li>
             </div>
             {!this.props.userLogedIn.jwt &&
-            <div className="rightSideNavBar">
+            <div>
             <li className="navBarlogin"><Link to={'/'}> LOG IN</Link></li>
             <li className="navBarlogin"><Link to={'/signup'}> SIGN UP</Link></li>
+            </div>
+            }
+            {this.props.userLogedIn.user_name &&
+            <div>
+            <li className="navBarHelloMessgae">Hello {this.props.userLogedIn.user_name} </li>
             </div>
             }
           </ul>

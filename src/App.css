@@ -80,6 +80,17 @@ body {
   float: right;
 }
 
+.navBarHelloMessgae{
+  display: flex;
+  float: right;
+  color: #F88F9E;
+  text-align: center;
+  padding: 14px 16px;
+  font-family: 'Fjalla One', sans-serif;
+  text-shadow: 2px 3px 3px rgba(0,0,0,0.2);
+  letter-spacing: 1px;
+}
+
 .navBar a {
   display: block;
   color: #730017;
